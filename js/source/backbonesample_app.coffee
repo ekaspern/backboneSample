@@ -7,6 +7,8 @@ define (require) ->
 
     initialize: =>
 
+    	console.log "test"
+
       #mainpage = new MainPage()
   
   return new App()

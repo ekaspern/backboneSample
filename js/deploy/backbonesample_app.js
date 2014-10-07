@@ -13,7 +13,9 @@ define(function(require) {
       return BackboneSampleApp.__super__.constructor.apply(this, arguments);
     }
 
-    BackboneSampleApp.prototype.initialize = function() {};
+    BackboneSampleApp.prototype.initialize = function() {
+      return console.log("test");
+    };
 
     return BackboneSampleApp;
 
