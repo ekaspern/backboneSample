@@ -28,6 +28,7 @@ body {
 }
 .main-title-block {
   margin-left: 50px;
+  margin-right: 50px;
   font-size: 20px;
   text-transform: uppercase;
   color: #685642;
@@ -42,6 +43,7 @@ body {
   padding: 40px 40px 120px 30px;
   display: inline-block;
   width: 80%;
+  background-color: #b7c68b;
 }
 .main-content-box {
   width: 100%;
@@ -51,35 +53,31 @@ body {
 .list-viewer-block {
   height: 100%;
 }
-.list-content {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-.list-content:first-child {
-  border-top: 1px solid #3b2472;
-}
-.list-content .gallery-item {
-  display: inline-block;
+li {
   padding: 15px 0;
-  border-bottom: 1px solid #3b2472;
+  border-bottom: 1px solid #685642;
 }
-.list-content .gallery-item.row {
-  width: 100%;
-  margin: auto;
-}
-.list-content .gallery-item .movie-poster-block,
-.list-content .gallery-item .movie-title,
-.list-content .gallery-item .release-date,
-.list-content .gallery-item .movie-price,
-.list-content .gallery-item .movie-condition-state,
-.list-content .gallery-item .movie-quality,
-.list-content .gallery-item .type-availability,
-.list-content .gallery-item .disc-digital-availability,
-.list-content .gallery-item .uv-availability,
-.list-content .gallery-item .eGift-option {
-  width: 10%;
+li.yard-item {
+  list-style-type: none;
   float: left;
+  clear: left;
+  width: 100%;
+  position: relative;
+  display: inline-flex;
+}
+li .yard-name {
+  width: 100%;
+}
+li em {
+  font-size: 10px;
+  font-style: normal;
+  display: inline-block;
+  float: right;
+  padding-right: 20px;
+  padding-top: 5px;
+}
+.right-arrow-details {
+  float: right;
 }
 /*------------------
       FOOTER

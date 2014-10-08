@@ -35,7 +35,7 @@ body {
 
 .main-title-block {
   margin-left: 50px;
-  
+  margin-right: 50px;
   font-size: 20px;
   text-transform: uppercase;
   color: @brown;
@@ -53,6 +53,7 @@ body {
   padding: 40px 40px 120px 30px;
   display: inline-block;
   width: 80%;
+  background-color: @lightGreen;
 
 }
 
@@ -64,36 +65,42 @@ body {
 .list-viewer-block {
   height: 100%;
 }
-.list-content {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  &:first-child {
-    border-top: 1px solid @purple;
+
+
+li {
+
+  padding: 15px 0;
+  border-bottom: 1px solid @brown;
+  &.yard-item {
+    list-style-type: none;
+    float: left;
+    clear: left;
+    width: 100%;
+    position: relative;
+    display: inline-flex;
   }
-  .gallery-item {
+
+  .yard-name{
+    width: 100%;
+  }
+  
+  em{
+    font-size: 10px;
+    font-style: normal;
     display: inline-block;
-    padding: 15px 0;
-    border-bottom: 1px solid @purple;
-    &.row {
-      width: 100%;
-      margin: auto;
-    }
-    .movie-poster-block,
-    .movie-title,
-    .release-date,
-    .movie-price,
-    .movie-condition-state,
-    .movie-quality,
-    .type-availability,
-    .disc-digital-availability,
-    .uv-availability,
-    .eGift-option {
-      width: 10%;
-      float:left;
-    }
+    float: right;
+    padding-right: 20px;
+    padding-top: 5px;
   }
+  
 }
+
+.right-arrow-details{
+  
+  float: right;
+
+}
+
 
 /*------------------
       FOOTER
