@@ -1,5 +1,5 @@
 { 
-  "description": "To view all galleries in the Boston area",
+  "description": "To view all lumber yards in the New England area",
   "author": "E Kaspern",
   "devDependencies": {
     "grunt": "~0.4.1",

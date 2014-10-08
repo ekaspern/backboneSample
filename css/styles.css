@@ -1,0 +1,100 @@
+/*------------------
+      GLOBALS
+------------------*/
+body {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background-color: #ffffff;
+  overflow-y: hidden;
+  font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.mainpage-box {
+  float: left;
+  width: 95%;
+  margin: 2.5%;
+}
+/*------------------
+      HEADER
+------------------*/
+.main-header {
+  float: left;
+  width: 100%;
+  height: 20%;
+  margin-top: 50px;
+}
+.main-title-block {
+  margin-left: 50px;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #685642;
+}
+/*------------------
+      CONTENT
+------------------*/
+.main-content {
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #d2d2d2;
+  padding: 40px 40px 120px 30px;
+  display: inline-block;
+  width: 80%;
+}
+.main-content-box {
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.list-viewer-block {
+  height: 100%;
+}
+.list-content {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.list-content:first-child {
+  border-top: 1px solid #3b2472;
+}
+.list-content .gallery-item {
+  display: inline-block;
+  padding: 15px 0;
+  border-bottom: 1px solid #3b2472;
+}
+.list-content .gallery-item.row {
+  width: 100%;
+  margin: auto;
+}
+.list-content .gallery-item .movie-poster-block,
+.list-content .gallery-item .movie-title,
+.list-content .gallery-item .release-date,
+.list-content .gallery-item .movie-price,
+.list-content .gallery-item .movie-condition-state,
+.list-content .gallery-item .movie-quality,
+.list-content .gallery-item .type-availability,
+.list-content .gallery-item .disc-digital-availability,
+.list-content .gallery-item .uv-availability,
+.list-content .gallery-item .eGift-option {
+  width: 10%;
+  float: left;
+}
+/*------------------
+      FOOTER
+------------------*/
+.main-footer {
+  position: fixed;
+  bottom: 0;
+  background-color: #ffffff;
+}
+.main-footer .footer-block {
+  float: left;
+  width: 100%;
+}
+.main-footer .footer-block span {
+  float: left;
+  width: 100%;
+  text-align: center;
+}

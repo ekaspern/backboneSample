@@ -3,7 +3,9 @@ define (require) ->
   Marionette = require 'marionette'
   Backbone = require 'backbone'
   Handlebars = require 'handlebars'  
-  
+
+  GlobalHeaderView = require 'views/globalHeader'
+
   LumberYardsCollection = require 'collections/lumberyards'
   LumberYardsView = require 'views/lumberyards'
   
@@ -20,9 +22,9 @@ define (require) ->
     
     
     regions: {
-      headerRegion: '#main-header'
-      contentRegion: '#main-content'
-      footerRegion: '#main-footer'
+      headerRegion: '.main-header'
+      contentRegion: '.main-content'
+      footerRegion: '.main-footer'
     }
     
     
@@ -67,15 +69,20 @@ define (require) ->
 
     onRender: =>
       
-      #@showHeader()
+      @showHeader()
       @showContent()
       #@showFooter()
+
+    showHeader: =>
+
+
+      @headerRegion.show(new GlobalHeaderView())
+
     
     showContent: =>
 
-      console.log "@lumberYardCollection", @lumberYardCollection
 
-      console.log "showContent222"
+
 
       # display the lumber yards list view
       @lumberYardsView = new LumberYardsView({

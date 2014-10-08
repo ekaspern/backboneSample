@@ -3,10 +3,11 @@ var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments)
   __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
 define(function(require) {
-  var Backbone, Handlebars, LumberYardsCollection, LumberYardsView, MainPage, Marionette;
+  var Backbone, GlobalHeaderView, Handlebars, LumberYardsCollection, LumberYardsView, MainPage, Marionette;
   Marionette = require('marionette');
   Backbone = require('backbone');
   Handlebars = require('handlebars');
+  GlobalHeaderView = require('views/globalHeader');
   LumberYardsCollection = require('collections/lumberyards');
   LumberYardsView = require('views/lumberyards');
   return MainPage = (function(_super) {
@@ -14,6 +15,7 @@ define(function(require) {
 
     function MainPage() {
       this.showContent = __bind(this.showContent, this);
+      this.showHeader = __bind(this.showHeader, this);
       this.onRender = __bind(this.onRender, this);
       return MainPage.__super__.constructor.apply(this, arguments);
     }
@@ -23,9 +25,9 @@ define(function(require) {
     MainPage.prototype.template = Handlebars.compile($('#mainpage-layout-template').html());
 
     MainPage.prototype.regions = {
-      headerRegion: '#main-header',
-      contentRegion: '#main-content',
-      footerRegion: '#main-footer'
+      headerRegion: '.main-header',
+      contentRegion: '.main-content',
+      footerRegion: '.main-footer'
     };
 
     MainPage.prototype.initialize = function() {
@@ -63,12 +65,15 @@ define(function(require) {
     };
 
     MainPage.prototype.onRender = function() {
+      this.showHeader();
       return this.showContent();
     };
 
+    MainPage.prototype.showHeader = function() {
+      return this.headerRegion.show(new GlobalHeaderView());
+    };
+
     MainPage.prototype.showContent = function() {
-      console.log("@lumberYardCollection", this.lumberYardCollection);
-      console.log("showContent222");
       this.lumberYardsView = new LumberYardsView({
         collection: this.lumberYardCollection
       });
