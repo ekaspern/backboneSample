@@ -15,8 +15,6 @@ define(function(require) {
 
     Galleries.prototype.model = Model;
 
-    Galleries.prototype.url = '/assets/gallerydata/galleryData.json';
-
     return Galleries;
 
   })(Backbone.Collection);
