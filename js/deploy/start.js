@@ -28,7 +28,7 @@ require.config({
 });
 
 define(function(require) {
-  var backboneSampleApp;
-  backboneSampleApp = require('backbonesample_app');
-  return backboneSampleApp.initialize();
+  var galleryApp;
+  galleryApp = require('gallery_app');
+  return galleryApp.initialize();
 });

@@ -1,4 +1,5 @@
-{
+{ 
+  "description": "To view all galleries in the Boston area",
   "author": "E Kaspern",
   "devDependencies": {
     "grunt": "~0.4.1",
@@ -10,3 +11,4 @@
     "grunt-contrib-cssmin": "~0.10.0"
   }
 }
+

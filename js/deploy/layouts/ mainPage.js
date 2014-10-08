@@ -3,10 +3,10 @@ var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments)
   __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
 define(function(require) {
-  var MainPage, Marionette, WoodCollection, template;
+  var Backbone, GalleriesCollection, MainPage, Marionette;
   Marionette = require('marionette');
-  template = require('hbs!templates/layouts/patients');
-  WoodCollection = require('collections/wood');
+  Backbone = require('backbone');
+  GalleriesCollection = require('collections/galleries');
   return MainPage = (function(_super) {
     __extends(MainPage, _super);
 
@@ -16,25 +16,16 @@ define(function(require) {
       return MainPage.__super__.constructor.apply(this, arguments);
     }
 
-    MainPage.prototype.tagName = "section";
-
-    MainPage.prototype.className = "nav-content-box-inner";
-
-    MainPage.prototype.template = template;
-
-    MainPage.prototype.regions = {
-      woodList: '#wood-list'
-    };
+    MainPage.prototype.el = '.homepage-box';
 
     MainPage.prototype.initialize = function() {
-      return this.woodCollection = new WoodCollection([], {});
+      console.log("help");
+      console.log("help222");
+      return console.log("@galleriesCollection", this.galleriesCollection);
     };
 
     MainPage.prototype.onRender = function() {
-      this.woodListView = new woodListView({
-        collection: this.woodCollection
-      });
-      return this.woodList.show(this.woodListView);
+      return console.log("render");
     };
 
     return MainPage;

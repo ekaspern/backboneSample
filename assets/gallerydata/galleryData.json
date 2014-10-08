@@ -1,5 +1,8 @@
 [
   {
-    'galleryName' : 'Gallery 1'
+    "galleryName" : "Gallery"
+  },
+  {
+  	"galleryName" : "GalleryA"
   }
 ]

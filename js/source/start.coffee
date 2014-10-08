@@ -28,6 +28,6 @@ require.config
 
 define (require) ->
 
-  backboneSampleApp = require 'backbonesample_app'
+  galleryApp = require 'gallery_app'
 
-  backboneSampleApp.initialize()
+  galleryApp.initialize()
