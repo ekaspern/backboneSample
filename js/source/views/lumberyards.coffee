@@ -6,7 +6,6 @@ define (require) ->
   
   YardItemView = require 'views/yard'
  
-  #EmptyView = require 'views/content/movies_empty_view'
   
   class LumberYardsList extends Marionette.CompositeView
 
@@ -25,8 +24,6 @@ define (require) ->
 
       return
 
-    
 
-    #emptyView: EmptyView
 
     
