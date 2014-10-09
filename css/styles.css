@@ -67,6 +67,7 @@ li.yard-item {
 }
 li .yard-name {
   width: 100%;
+  cursor: pointer;
 }
 li em {
   font-size: 10px;
@@ -76,8 +77,30 @@ li em {
   padding-right: 20px;
   padding-top: 5px;
 }
+.yard-details {
+  width: 100%;
+}
+.yard-details hr {
+  border-color: #685642;
+}
+.yard-details .yard-address {
+  padding-bottom: 10px;
+}
+.yard-details .yard-contact-info {
+  padding-bottom: 10px;
+}
 .right-arrow-details {
   float: right;
+  cursor: pointer;
+}
+.left-arrow-back {
+  padding-left: 10px;
+  float: right;
+}
+.text-back {
+  float: right;
+  cursor: pointer;
+  padding-top: 50px;
 }
 /*------------------
       FOOTER

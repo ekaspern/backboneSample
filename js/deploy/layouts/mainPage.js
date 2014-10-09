@@ -3,18 +3,21 @@ var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments)
   __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
 define(function(require) {
-  var Backbone, GlobalHeaderView, Handlebars, LumberYardsCollection, LumberYardsView, MainPage, Marionette;
+  var Backbone, GlobalHeaderView, Handlebars, LumberYardsCollection, LumberYardsView, MainPage, Marionette, YardDetailView, vent;
   Marionette = require('marionette');
   Backbone = require('backbone');
   Handlebars = require('handlebars');
+  vent = require('vent');
   GlobalHeaderView = require('views/globalHeader');
   LumberYardsCollection = require('collections/lumberyards');
   LumberYardsView = require('views/lumberyards');
+  YardDetailView = require('views/yardDetails');
   return MainPage = (function(_super) {
     __extends(MainPage, _super);
 
     function MainPage() {
-      this.showContent = __bind(this.showContent, this);
+      this.showYardDetail = __bind(this.showYardDetail, this);
+      this.showMainContent = __bind(this.showMainContent, this);
       this.showHeader = __bind(this.showHeader, this);
       this.onRender = __bind(this.onRender, this);
       return MainPage.__super__.constructor.apply(this, arguments);
@@ -32,14 +35,13 @@ define(function(require) {
 
     MainPage.prototype.initialize = function() {
       var lumberYardData;
-      console.log("help");
       lumberYardData = [
         {
           "yardName": "Anderson & McQuaid",
           "addressStreet1": "170 Fawcett Street",
           "city": "Cambridge",
           "state": "MA",
-          "website": "www.societyofcrafts.org",
+          "website": "www.andersonmcquaid.com",
           "phone": "617.876.3250",
           "woodTypes": ["Hardwoods", "Exotics", "Moldings"]
         }, {
@@ -93,23 +95,35 @@ define(function(require) {
         }
       ];
       this.lumberYardCollection = new LumberYardsCollection(lumberYardData);
+      this.listenTo(vent, {
+        'show-details:yard': this.showYardDetail,
+        'show-list:lumberyard': this.showMainContent
+      });
       return this.render();
     };
 
     MainPage.prototype.onRender = function() {
       this.showHeader();
-      return this.showContent();
+      return this.showMainContent();
     };
 
     MainPage.prototype.showHeader = function() {
       return this.headerRegion.show(new GlobalHeaderView());
     };
 
-    MainPage.prototype.showContent = function() {
+    MainPage.prototype.showMainContent = function() {
       this.lumberYardsView = new LumberYardsView({
         collection: this.lumberYardCollection
       });
       return this.contentRegion.show(this.lumberYardsView);
+    };
+
+    MainPage.prototype.showYardDetail = function(model) {
+      var detailView;
+      detailView = new YardDetailView({
+        model: model
+      });
+      return this.contentRegion.show(detailView);
     };
 
     return MainPage;

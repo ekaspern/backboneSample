@@ -8,9 +8,7 @@ define (require)->
       yardName: ""
       addressStreet1 : ""
       city : ""
-      email : ""
+      state: ""
       website : ""
-      hours : ""
-      location : ""
-      uiAddress : ""
+      
       

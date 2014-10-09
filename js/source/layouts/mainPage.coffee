@@ -3,11 +3,14 @@ define (require) ->
   Marionette = require 'marionette'
   Backbone = require 'backbone'
   Handlebars = require 'handlebars'  
+  vent = require 'vent'
 
   GlobalHeaderView = require 'views/globalHeader'
 
   LumberYardsCollection = require 'collections/lumberyards'
   LumberYardsView = require 'views/lumberyards'
+
+  YardDetailView = require 'views/yardDetails'
   
   
   #PvrRegion = require 'regions/popover'
@@ -29,7 +32,6 @@ define (require) ->
     
     
     initialize: ->
-      console.log "help"
 
       #normally i would call a web service in the lumber yards collection but I am just passing in the data so people can down load my app and run it
       lumberYardData = [
@@ -39,7 +41,7 @@ define (require) ->
           "addressStreet1" : "170 Fawcett Street",
           "city" : "Cambridge",
           "state" : "MA"
-          "website" : "www.societyofcrafts.org",
+          "website" : "www.andersonmcquaid.com",
           "phone" : "617.876.3250",
           "woodTypes" : ["Hardwoods", "Exotics", "Moldings"]
         },
@@ -102,13 +104,19 @@ define (require) ->
 
       @lumberYardCollection = new LumberYardsCollection(lumberYardData)
 
+      # listening to see if the user clicks on a yard in the list of lumber yard
+      @listenTo(vent, {
+        'show-details:yard' : @showYardDetail
+        'show-list:lumberyard' : @showMainContent
+      })
+
 
       @render()
 
     onRender: =>
       
       @showHeader()
-      @showContent()
+      @showMainContent()
       #@showFooter()
 
     showHeader: =>
@@ -117,10 +125,7 @@ define (require) ->
       @headerRegion.show(new GlobalHeaderView())
 
     
-    showContent: =>
-
-
-
+    showMainContent: =>
 
       # display the lumber yards list view
       @lumberYardsView = new LumberYardsView({
@@ -128,4 +133,14 @@ define (require) ->
       })
 
       @contentRegion.show(@lumberYardsView)
+
+    # displays the detail view for the yard
+    showYardDetail: (model) =>
+
+      detailView = new YardDetailView({
+        model: model
+      })
+
+      @contentRegion.show(detailView)
+      
       

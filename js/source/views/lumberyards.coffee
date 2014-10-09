@@ -2,8 +2,10 @@ define (require) ->
   
   Marionette = require 'marionette'
   Handlebars = require 'handlebars'
+  vent = require 'vent'
   
   YardItemView = require 'views/yard'
+ 
   #EmptyView = require 'views/content/movies_empty_view'
   
   class LumberYardsList extends Marionette.CompositeView
@@ -20,7 +22,10 @@ define (require) ->
 
 
     initialize : (options)->
-      console.log "lumberyards view??"
+
+      return
+
+    
 
     #emptyView: EmptyView
 
