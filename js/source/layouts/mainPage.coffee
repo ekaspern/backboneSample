@@ -43,7 +43,11 @@ define (require) ->
           "state" : "MA"
           "website" : "www.andersonmcquaid.com",
           "phone" : "617.876.3250",
-          "woodTypes" : ["Hardwoods", "Exotics", "Moldings"]
+          "woodTypes" : [
+            {"wood" :"Hardwoods"}, 
+            {"wood" :"Exotics"}, 
+            {"wood" :"Moldings"}
+          ]
         },
         {
           "yardName" : "Boulter Plywood",
@@ -52,7 +56,11 @@ define (require) ->
           "state" : "MA"
           "website" : "www.boulterplywood.com",
           "phone" : "617.666.1340",
-          "woodTypes" : ["Hardwoods", "Veneer", "Plywood"]
+          "woodTypes" : [
+            {"wood" :"Hardwoods"}, 
+            {"wood" :"Veneer"}, 
+            {"wood" :"Plywood"}
+          ]
         },
         {
           "yardName" : "Downs & Reader",
@@ -61,7 +69,7 @@ define (require) ->
           "state" : "MA"
           "website" : "www.downesandreader.com",
           "phone" : "617.442.8050",
-          "woodTypes" : ["Hardwoods"]
+          "woodTypes" : [{"wood" :"Hardwoods"}]
         },
         {
           "yardName" : "Highland Hardwoods",
@@ -70,7 +78,7 @@ define (require) ->
           "state" : "NH"
           "website" : "www.highlandhardwoods.com",
           "phone" : "603.679.1230",
-          "woodTypes" : ["Hardwoods"]
+          "woodTypes" : [{"wood" :"Hardwoods"}]
         },
         {
           "yardName" : "Holt & Bugbee",
@@ -79,7 +87,12 @@ define (require) ->
           "state" : "MA"
           "website" : "www.holtandbugbee.com",
           "phone" : "508.851.7201",
-          "woodTypes" : ["Hardwoods, Softwoods, Domestic, Imported"]
+          "woodTypes" : [
+            {"wood" :"Hardwoods"}, 
+            {"wood" :"Softwoods"}, 
+            {"wood" :"Domestic"},
+            {"wood" :"Imported"}
+          ]
         },
         {
           "yardName" : "Kiever-Willard",
@@ -88,7 +101,7 @@ define (require) ->
           "state" : "MA"
           "website" : "www.keiver-willard.com/",
           "phone" : "508.462.7193",
-          "woodTypes" : ["Hardwoods"]
+          "woodTypes" : [{"wood" :"Hardwoods"}]
         },
         {
           "yardName" : "Northland Forest Products",
@@ -97,7 +110,7 @@ define (require) ->
           "state" : "NH"
           "website" : "www.northlandforest.com",
           "phone" : "603.642.8275",
-          "woodTypes" : ["Hardwoods"]
+          "woodTypes" : [{"wood" :"Hardwoods"}]
         }
 
       ]
@@ -117,17 +130,15 @@ define (require) ->
       
       @showHeader()
       @showMainContent()
-      #@showFooter()
 
+    #display header
     showHeader: =>
-
-
       @headerRegion.show(new GlobalHeaderView())
 
     
+    # display the lumber yards list view
     showMainContent: =>
-
-      # display the lumber yards list view
+      
       @lumberYardsView = new LumberYardsView({
         collection: @lumberYardCollection
       })

@@ -45,7 +45,10 @@
       <div >{{phone}}</div>
       <div ><a href="http://{{website}}" target="_blank">{{website}}</a></div>
     </div>
-    <div >{{woodTypes}}</div>
+    <div class="yard-wood">
+      <span>Products</span> 
+      {{#each woodTypes}}<li class="wood-type">{{wood}}</li>{{/each}}
+    </div>
 
     <span class="text-back">Back<div class="left-arrow-back"><img src="./assets/images/orangeLeftArrow.png" alt="Left Arrow"></div></span>
 

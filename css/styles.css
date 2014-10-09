@@ -65,12 +65,17 @@ li.yard-item {
   position: relative;
   display: inline-flex;
 }
+li.wood-type {
+  list-style-type: none;
+  border-bottom: 0px;
+  padding: 5px 0;
+}
 li .yard-name {
   width: 100%;
   cursor: pointer;
 }
 li em {
-  font-size: 10px;
+  font-size: 12px;
   font-style: normal;
   display: inline-block;
   float: right;
@@ -101,6 +106,14 @@ li em {
   float: right;
   cursor: pointer;
   padding-top: 50px;
+}
+.yard-wood {
+  padding-top: 10px;
+  font-size: 12px;
+}
+.yard-wood span {
+  font-size: 16px;
+  color: #685642;
 }
 /*------------------
       FOOTER
