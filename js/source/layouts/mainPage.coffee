@@ -7,8 +7,8 @@ define (require) ->
 
   GlobalHeaderView = require 'views/globalHeader'
 
-  LumberYardsCollection = require 'collections/lumberyards'
-  LumberYardsView = require 'views/lumberyards'
+  LumberYardsCollection = require 'collections/lumberYards'
+  LumberYardsView = require 'views/lumberYards'
 
   YardDetailView = require 'views/yardDetails'
   

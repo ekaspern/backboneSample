@@ -9,8 +9,8 @@ define(function(require) {
   Handlebars = require('handlebars');
   vent = require('vent');
   GlobalHeaderView = require('views/globalHeader');
-  LumberYardsCollection = require('collections/lumberyards');
-  LumberYardsView = require('views/lumberyards');
+  LumberYardsCollection = require('collections/lumberYards');
+  LumberYardsView = require('views/lumberYards');
   YardDetailView = require('views/yardDetails');
   return MainPage = (function(_super) {
     __extends(MainPage, _super);
