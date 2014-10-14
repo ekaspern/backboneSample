@@ -44,7 +44,7 @@
 
   <!-- template for yard details-->
   <script type="text/x-handlebars-template" id="yard-details-template">
-    <div >{{yardName}}</div>
+    <div class="yard-name">{{yardName}}</div>
     <hr class="yard-detail-line">
     <div class="yard-address">
       <div >{{addressStreet1}}</div>
@@ -56,6 +56,7 @@
     </div>
     <div class="yard-wood">
       <span>Products</span> 
+      <hr>
       {{#each woodTypes}}<li class="wood-type">{{wood}}</li>{{/each}}
     </div>
 
