@@ -25,7 +25,7 @@ define(function(require) {
       'click .text-back': 'displayLumberYards'
     };
 
-    YardDetails.prototype.initialize = function() {};
+    YardDetails.prototype.initialize = function(options) {};
 
     YardDetails.prototype.displayLumberYards = function() {
       return vent.trigger('show-list:lumberyard');

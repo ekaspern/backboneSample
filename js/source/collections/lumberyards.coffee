@@ -3,7 +3,7 @@ define (require) ->
   Backbone = require 'backbone'
   
   
-  Model = require 'models/lumberyard'
+  Model = require 'models/yard'
 
   class LumberYards extends Backbone.Collection
 

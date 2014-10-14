@@ -16,6 +16,7 @@ define(function(require) {
     __extends(MainPage, _super);
 
     function MainPage() {
+      this.getFilteredContent = __bind(this.getFilteredContent, this);
       this.showYardDetail = __bind(this.showYardDetail, this);
       this.showMainContent = __bind(this.showMainContent, this);
       this.showHeader = __bind(this.showHeader, this);
@@ -139,7 +140,8 @@ define(function(require) {
       this.lumberYardCollection = new LumberYardsCollection(lumberYardData);
       this.listenTo(vent, {
         'show-details:yard': this.showYardDetail,
-        'show-list:lumberyard': this.showMainContent
+        'show-list:lumberyard': this.showMainContent,
+        'show-list-filtered:lumberyard': this.getFilteredContent
       });
       return this.render();
     };
@@ -150,7 +152,9 @@ define(function(require) {
     };
 
     MainPage.prototype.showHeader = function() {
-      return this.headerRegion.show(new GlobalHeaderView());
+      return this.headerRegion.show(new GlobalHeaderView({
+        collection: this.lumberYardCollection
+      }));
     };
 
     MainPage.prototype.showMainContent = function() {
@@ -166,6 +170,11 @@ define(function(require) {
         model: model
       });
       return this.contentRegion.show(detailView);
+    };
+
+    MainPage.prototype.getFilteredContent = function(filteredCollection) {
+      this.lumberYardCollection = filteredCollection;
+      return this.showMainContent();
     };
 
     return MainPage;

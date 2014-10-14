@@ -29,6 +29,8 @@ define (require) ->
       contentRegion: '.main-content'
       footerRegion: '.main-footer'
     }
+
+    
     
     
     initialize: ->
@@ -121,6 +123,7 @@ define (require) ->
       @listenTo(vent, {
         'show-details:yard' : @showYardDetail
         'show-list:lumberyard' : @showMainContent
+        'show-list-filtered:lumberyard' : @getFilteredContent
       })
 
 
@@ -133,8 +136,10 @@ define (require) ->
 
     #display header
     showHeader: =>
-      @headerRegion.show(new GlobalHeaderView())
-
+      @headerRegion.show(new GlobalHeaderView({
+          collection: @lumberYardCollection
+        })
+      )
     
     # display the lumber yards list view
     showMainContent: =>
@@ -153,5 +158,15 @@ define (require) ->
       })
 
       @contentRegion.show(detailView)
-      
-      
+
+    # set the filtered content
+    getFilteredContent: (filteredCollection) =>
+
+      #set the collection to the filter collection
+      @lumberYardCollection = filteredCollection
+      #show content
+      @showMainContent()
+
+
+
+

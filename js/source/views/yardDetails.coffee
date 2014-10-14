@@ -17,11 +17,14 @@ define (require) ->
 
     
 
-    initialize : ()->
+    initialize : (options)->
+
       return
 
     displayLumberYards: =>
-      vent.trigger 'show-list:lumberyard'
+
+
+      vent.trigger('show-list:lumberyard')
 
 
     

@@ -16,11 +16,8 @@ define (require) ->
     itemViewContainer : 'ul.lumberyards-list'
     itemViewOptions : {}
 
-    collectionEvents :
-      'sync' : 'render'
 
-
-    initialize : (options)->
+    initialize : (options) ->
 
       return
 

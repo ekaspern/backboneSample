@@ -4,7 +4,7 @@ var __hasProp = {}.hasOwnProperty,
 define(function(require) {
   var Backbone, LumberYards, Model;
   Backbone = require('backbone');
-  Model = require('models/lumberyard');
+  Model = require('models/yard');
   return LumberYards = (function(_super) {
     __extends(LumberYards, _super);
 

@@ -15,9 +15,17 @@
   </script>
 
   <script type="text/x-handlebars-template" id="globalheader-view-template">
-    <div class="main-title-block">New England</div>    
-    <div class="main-title-block">Lumber Yards</div>
-    <hr>
+    <div class="title-block">
+      <div class="main-title">New England</div>    
+      <div class="main-title">Lumber Yards</div>
+    </div>
+    <div class="search-block">
+      <input type="text" class="search-input" size="50" placeholder="Search by Name, Location, Products" id="searchInput" >
+      <input type="button" class="search-button" value="Search">
+    </div>
+
+    
+    
   </script>
 
   <!-- template for the collection of lumber yards -->
@@ -34,6 +42,7 @@
     <div class="right-arrow-details"><img src="./assets/images/orangeRightArrow.png" alt="Right Arrow"></div>
   </script>
 
+  <!-- template for yard details-->
   <script type="text/x-handlebars-template" id="yard-details-template">
     <div >{{yardName}}</div>
     <hr class="yard-detail-line">
@@ -54,11 +63,7 @@
 
   </script>
 
-  
 
-
-
-  
 </head>
 <body>
 

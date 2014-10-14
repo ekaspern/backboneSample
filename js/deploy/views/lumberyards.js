@@ -22,10 +22,6 @@ define(function(require) {
 
     LumberYardsList.prototype.itemViewOptions = {};
 
-    LumberYardsList.prototype.collectionEvents = {
-      'sync': 'render'
-    };
-
     LumberYardsList.prototype.initialize = function(options) {};
 
     return LumberYardsList;
