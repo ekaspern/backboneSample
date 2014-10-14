@@ -16,7 +16,7 @@ define(function(require) {
     __extends(MainPage, _super);
 
     function MainPage() {
-      this.getFilteredContent = __bind(this.getFilteredContent, this);
+      this.filterContent = __bind(this.filterContent, this);
       this.showYardDetail = __bind(this.showYardDetail, this);
       this.showMainContent = __bind(this.showMainContent, this);
       this.showHeader = __bind(this.showHeader, this);
@@ -141,7 +141,7 @@ define(function(require) {
       this.listenTo(vent, {
         'show-details:yard': this.showYardDetail,
         'show-list:lumberyard': this.showMainContent,
-        'show-list-filtered:lumberyard': this.getFilteredContent
+        'show-list-filtered:lumberyard': this.filterContent
       });
       return this.render();
     };
@@ -172,7 +172,7 @@ define(function(require) {
       return this.contentRegion.show(detailView);
     };
 
-    MainPage.prototype.getFilteredContent = function(filteredCollection) {
+    MainPage.prototype.filterContent = function(filteredCollection) {
       this.lumberYardCollection = filteredCollection;
       return this.showMainContent();
     };

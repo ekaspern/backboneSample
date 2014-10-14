@@ -26,7 +26,6 @@ define(function(require) {
     Yard.prototype.initialize = function() {};
 
     Yard.prototype.onClick = function(event) {
-      console.log("event", event);
       return vent.trigger('show-details:yard', this.model);
     };
 

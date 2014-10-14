@@ -21,6 +21,4 @@ define (require) ->
 
     onClick : (event)->
 
-      console.log "event", event
-
       vent.trigger('show-details:yard', @model)

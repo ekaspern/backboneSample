@@ -28,7 +28,10 @@ define (require) ->
       list = @collection.filter (model)->
 
         _.any model.attributes, (val, attr)->
-          val is searchTerm
+
+          # if the search term is part of the val then it will return an index greater than -1
+          val.indexOf(searchTerm) isnt -1
+          
 
       # for each item add to the new collection
       for item in list

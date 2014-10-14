@@ -34,7 +34,7 @@ define(function(require) {
       filteredCollection = new Backbone.Collection;
       list = this.collection.filter(function(model) {
         return _.any(model.attributes, function(val, attr) {
-          return val === searchTerm;
+          return val.indexOf(searchTerm) !== -1;
         });
       });
       for (_i = 0, _len = list.length; _i < _len; _i++) {

@@ -123,7 +123,7 @@ define (require) ->
       @listenTo(vent, {
         'show-details:yard' : @showYardDetail
         'show-list:lumberyard' : @showMainContent
-        'show-list-filtered:lumberyard' : @getFilteredContent
+        'show-list-filtered:lumberyard' : @filterContent
       })
 
 
@@ -160,7 +160,7 @@ define (require) ->
       @contentRegion.show(detailView)
 
     # set the filtered content
-    getFilteredContent: (filteredCollection) =>
+    filterContent: (filteredCollection) =>
 
       #set the collection to the filter collection
       @lumberYardCollection = filteredCollection
